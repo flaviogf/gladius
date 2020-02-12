@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import findOrCreate from 'mongoose-find-or-create'
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -7,8 +8,15 @@ const UserSchema = new mongoose.Schema({
   },
   avatar_url: {
     type: String,
-    required: true,
+  },
+  name: {
+    type: String,
+  },
+  bio: {
+    type: String,
   },
 })
+
+UserSchema.plugin(findOrCreate)
 
 export default mongoose.model('User', UserSchema)

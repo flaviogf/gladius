@@ -1,14 +1,5 @@
 extends layout.pug
 
 block content
-  div(class="sign-in__content")
-    h1(class="sign-in__title") Sign In to Glacius
-    |
-    form(class="form")
-      div(class="form__group")
-        label(class="form__label" for="username") Username
-        input(class="form__input" type="text" id="username" name="username")
-      div(class="form__group")
-        label(class="form__label" for="password") Password
-        input(class="form__input" type="password" id="password" name="password")
-      button(class="button") Sign in
+  h2 Sign in to Gladius
+  a(href="/sign-in-with-github") Enter with Github
