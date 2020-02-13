@@ -1,0 +1,25 @@
+{
+  "name": "gladius",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:flaviogf/gladius.git",
+  "author": "flaviogf <flavio.fernandes6@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "sequelize-cli": "5.5.1"
+  },
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "pg": "7.18.1",
+    "pg-hstore": "2.3.3",
+    "sequelize": "5.21.4"
+  }
+}
