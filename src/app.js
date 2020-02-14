@@ -2,6 +2,7 @@ import { createContainer, asClass, asValue } from 'awilix'
 import { scopePerRequest } from 'awilix-express'
 import bcrypt from 'bcryptjs'
 import express from 'express'
+import flash from 'express-flash'
 import session from 'express-session'
 import passport from 'passport'
 import { Strategy as LocalStrategy } from 'passport-local'
@@ -66,6 +67,7 @@ class App {
   configure() {
     this.server.use(session(sessionConfig))
     this.server.use(express.urlencoded({ extended: true }))
+    this.server.use(flash())
     this.server.use(passport.initialize())
     this.server.use(passport.session())
     this.server.use(scopePerRequest(this.container))
