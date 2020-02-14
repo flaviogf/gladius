@@ -2,7 +2,7 @@ module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface.createTable('user_rooms', {
       user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false,
         references: {
@@ -13,7 +13,7 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       room_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false,
         references: {

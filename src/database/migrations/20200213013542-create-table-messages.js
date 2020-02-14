@@ -2,8 +2,7 @@ module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface.createTable('messages', {
       id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
+        type: Sequelize.STRING,
         primaryKey: true,
         allowNull: false,
       },
@@ -12,7 +11,7 @@ module.exports = {
         allowNull: false,
       },
       user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         references: {
           model: 'users',
@@ -22,7 +21,7 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       room_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         references: {
           model: 'rooms',
