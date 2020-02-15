@@ -1,0 +1,45 @@
+extends layout.pug
+
+block content
+  h2= room.name
+
+  ul
+    each message in room.messages
+      li
+        span= message.content
+
+  form
+    input(type="hidden" value=`${room.id}` name="id")
+    textarea(name="content")
+    button Send
+
+block scripts
+  script(type="module").
+    import { createHttpTransporter } from '/static/js/transporter.js'
+    import { createChat } from '/static/js/chat.js'
+
+    const transporter = createHttpTransporter()
+
+    const chat = createChat(transporter)
+
+    const form = document.querySelector('form')
+
+    chat.subscribe((message) => {
+      const li = document.createElement('li')
+      li.textContent = message.content
+
+      const ul = document.querySelector('ul')
+      ul.append(li)
+
+      form.content.value = ''
+      form.content.focus()
+    })
+
+    form.onsubmit = async (e) => {
+      e.preventDefault()
+
+      const id = e.target.id.value
+      const content = e.target.content.value
+
+      chat.send({ id, content })
+    }

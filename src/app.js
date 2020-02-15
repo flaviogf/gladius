@@ -25,8 +25,8 @@ class App {
   }
 
   configureServices() {
-    this.server.set('view engine', 'pug')
     this.server.set('views', resolve(__dirname, 'views'))
+    this.server.set('view engine', 'pug')
 
     this.container.register({
       connection: asValue(new Sequelize(databaseConfig)),
@@ -57,9 +57,7 @@ class App {
 
     passport.deserializeUser(async (id, done) => {
       const database = this.container.resolve('database')
-
       const user = await database.users.findByPk(id)
-
       return done(null, user)
     })
   }
@@ -67,10 +65,12 @@ class App {
   configure() {
     this.server.use(session(sessionConfig))
     this.server.use(express.urlencoded({ extended: true }))
+    this.server.use(express.json())
     this.server.use(flash())
     this.server.use(passport.initialize())
     this.server.use(passport.session())
     this.server.use(scopePerRequest(this.container))
+    this.server.use('/static', express.static(resolve(__dirname, 'static')))
     this.server.use(routes)
   }
 

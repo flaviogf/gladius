@@ -7,4 +7,10 @@ html(lang="en")
   body
     block content
 
-    span= messages
+    - if (messages.error)
+      span= messages.error
+
+    - if (messages.info)
+      span= messages.info
+
+    block scripts

@@ -42,6 +42,11 @@ class User extends Model {
   }
 
   static associate({ models }) {
+    this.belongsToMany(models.Room, {
+      through: 'user_rooms',
+      as: 'rooms',
+    })
+
     return this
   }
 }
