@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  h2 Join to the room
+
+  form(action="/room/join" method="POST")
+    input(type="text" name="name")
+    button Join

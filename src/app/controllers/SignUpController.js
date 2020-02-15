@@ -19,7 +19,7 @@ class SignUpController {
     })
 
     if (isUsernameAlreadyTaken) {
-      req.flash('error', 'Invalid email or password.')
+      req.flash('error', 'This username is already taken.')
 
       return res.render('sign-up__create')
     }

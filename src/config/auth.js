@@ -1,5 +1,5 @@
 export default {
-  failureFlash: 'Invalid username or password.',
-  failureRedirect: '/sign-in',
-  successRedirect: '/room',
+  failureFlash: process.env.AUTH_FAILURE_FLASH,
+  failureRedirect: process.env.AUTH_FAILURE_REDIRECT,
+  successRedirect: process.env.AUTH_SUCCESS_REDIRECT,
 }

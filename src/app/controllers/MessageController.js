@@ -1,8 +1,9 @@
 import uuid4 from 'uuid/v4'
 
 class MessageController {
-  constructor({ database }) {
+  constructor({ database, io }) {
     this.database = database
+    this.io = io
   }
 
   async store(req, res) {
@@ -28,6 +29,8 @@ class MessageController {
       user_id: req.user.id,
       room_id: id,
     })
+
+    this.io.in(id).emit('message-received', { content })
 
     return res.status(200).json({ data: message, errors: [] })
   }
