@@ -1,0 +1,9 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}

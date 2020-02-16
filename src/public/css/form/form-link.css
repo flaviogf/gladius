@@ -1,0 +1,11 @@
+.form__link {
+  color: #fff;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.form__link a {
+  color: #7289da;
+  margin-left: 5px;
+  text-decoration: none;
+}

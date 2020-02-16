@@ -1,0 +1,16 @@
+.form__label {
+  color: #8e9297;
+  cursor: text;
+  display: block;
+  left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.1s;
+}
+
+.form__input--focus + .form__label {
+  background-color: #36393f;
+  font-size: 12px;
+  top: -0.5px;
+}

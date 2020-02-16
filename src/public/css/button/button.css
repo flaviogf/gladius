@@ -1,0 +1,20 @@
+.button {
+  background-color: #7289DA;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  height: 50px;
+  text-transform: uppercase;
+  transition: .1s;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #677bc4;
+}
+
+.button:active {
+  background-color: #5b6eae;
+}

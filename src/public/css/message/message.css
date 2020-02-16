@@ -1,0 +1,21 @@
+.message {
+  align-items: center;
+  background-color: #36393f;
+  border-radius: 3px 3px 0 0;
+  display: flex;
+  color: #fff;
+  height: 50px;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.message--error {
+  color: #f04747;
+}
+
+.message--info {
+  color: #43b581;
+}

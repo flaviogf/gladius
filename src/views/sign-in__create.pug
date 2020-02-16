@@ -1,7 +1,16 @@
 extends layout.pug
 
 block content
-  form(method="POST")
-    input(type="text" name="username")
-    input(type="password" name="password")
-    button Sign in
+  div(class="container")
+    form(class="form", method="POST")
+      h3(class="title") Welcome back
+      p(class="subtitle") Please sign in to start chatting
+      div(class="form__group")
+        input(class="form__input", type="text", name="username", id="username")
+        label(class="form__label", for="username") Username
+      div(class="form__group")
+        input(class="form__input", type="password", name="password", id="password")
+        label(class="form__label", for="password") Password
+      button(class="button") Sign in
+      p(class="form__link") Haven't you an account?
+        a(href="/") Sign up.

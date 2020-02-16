@@ -4,14 +4,43 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Gladius
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap")
+    link(rel="stylesheet", href="/css/reset.css")
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="/css/container/container.css")
+    link(rel="stylesheet", href="/css/button/button.css")
+    link(rel="stylesheet", href="/css/form/form.css")
+    link(rel="stylesheet", href="/css/form/form-group.css")
+    link(rel="stylesheet", href="/css/form/form-input.css")
+    link(rel="stylesheet", href="/css/form/form-label.css")
+    link(rel="stylesheet", href="/css/form/form-link.css")
+    link(rel="stylesheet", href="/css/title/title.css")
+    link(rel="stylesheet", href="/css/subtitle/subtitle.css")
+    link(rel="stylesheet", href="/css/message/message.css")
   body
     block content
 
     - if (messages.error)
-      span= messages.error
+      span(class="message message--error")= messages.error
 
     - if (messages.info)
-      span= messages.info
+      span(class="message message--info")= messages.info
+
+    script.
+      const inputs = document.querySelectorAll('.form__input')
+
+      inputs.forEach(it => it.addEventListener('focus', onFocus))
+      inputs.forEach(it => it.addEventListener('blur', onBlur))
+
+      function onFocus() {
+        this.classList.add('form__input--focus')
+      }
+
+      function onBlur() {
+        if(this.value) return
+        this.classList.remove('form__input--focus')
+      }
+
 
     script(src="/socket.io/socket.io.js")
 
