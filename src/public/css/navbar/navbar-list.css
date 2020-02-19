@@ -1,0 +1,4 @@
+.navbar__list {
+  flex-direction: column;
+  display: flex;
+}

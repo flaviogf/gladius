@@ -1,0 +1,9 @@
+.navbar__item {
+  border-radius: 3px;
+  height: 45px;
+  margin: 8px;
+}
+
+.navbar__item--selected {
+  background-color: rgba(79, 84, 92, 0.32);
+}

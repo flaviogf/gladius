@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #2f3136;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translateX(-240px);
+  transition: 280ms cubic-bezier(0, 0, 0.2, 1);
+  width: 240px;
+}
+
+.navbar--opened {
+  transform: translateX(0px);
+}
