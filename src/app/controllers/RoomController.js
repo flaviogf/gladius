@@ -39,7 +39,9 @@ class RoomController {
   }
 
   async index(req, res) {
-    const rooms = await req.user.getRooms()
+    const rooms = await req.user.getRooms({
+      order: [['name', 'ASC']],
+    })
 
     return res.render('room__index', { rooms })
   }

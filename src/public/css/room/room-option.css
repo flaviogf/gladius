@@ -1,0 +1,34 @@
+.room__option {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  margin: 12px 0;
+  text-decoration: none;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.room__option:hover {
+  border: 2px solid #7289da;
+  transform: translateY(-7px);
+}
+
+.room__option i {
+  color: #7289da;
+  font-size: 50px;
+}
+
+.room__option p {
+  color: #839297;
+  margin: 12px 0;
+}
+
+@media (min-width: 768px) {
+  .room__option {
+    margin: 12px 8px;
+  }
+}

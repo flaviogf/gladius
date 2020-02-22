@@ -19,9 +19,15 @@ html(lang="en")
     link(rel="stylesheet", href="/css/message/message.css")
     link(rel="stylesheet", href="/css/navbar/navbar.css")
     link(rel="stylesheet", href="/css/navbar/navbar-item.css")
+    link(rel="stylesheet", href="/css/navbar/navbar-items.css")
     link(rel="stylesheet", href="/css/navbar/navbar-label.css")
     link(rel="stylesheet", href="/css/navbar/navbar-link.css")
-    link(rel="stylesheet", href="/css/navbar/navbar-list.css")
+    link(rel="stylesheet", href="/css/navbar/navbar-title.css")
+    link(rel="stylesheet", href="/css/menu-button/menu-button.css")
+    link(rel="stylesheet", href="/css/room/room.css")
+    link(rel="stylesheet", href="/css/room/room-content.css")
+    link(rel="stylesheet", href="/css/room/room-option.css")
+    script(src="https://kit.fontawesome.com/a076d05399.js")
   body
     block content
 
@@ -32,10 +38,24 @@ html(lang="en")
       span(class="message message--info")= messages.info
 
     script.
+      const menuButton = document.querySelector('.menu__button')
+
+      menuButton.addEventListener('click', toggleMenu)
+
+      const navbar = document.querySelector('.navbar')
+
+      const overlay = document.querySelector('.overlay')
+
+      overlay.addEventListener('click', toggleMenu)
+
       const inputs = document.querySelectorAll('.form__input')
 
       inputs.forEach(it => it.addEventListener('focus', onFocus))
       inputs.forEach(it => it.addEventListener('blur', onBlur))
+
+      function toggleMenu() {
+        navbar.classList.toggle('navbar--opened')
+      }
 
       function onFocus() {
         this.classList.add('form__input--focus')

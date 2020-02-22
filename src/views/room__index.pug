@@ -2,7 +2,8 @@ extends layout.pug
 
 block content
   nav(class="navbar")
-    ul(class="navbar__list")
+    span(class="navbar__title") Rooms
+    ul(class="navbar__items")
       each room, index in rooms
         if index == 1
           li(class="navbar__item navbar__item--selected")
@@ -13,6 +14,16 @@ block content
             a(class="navbar__link", href=`room/${room.id}`)
               span(class="navbar__label")= room.name
 
-  div(class="container")
-    a(href="/room/create") Add a new room
-    a(href="/room/join/create") Join an existing room
+  div(class="overlay")
+
+  button(class="menu__button" type="button")
+    i(class="fas fa-bars")
+
+  div(class="room")
+    div(class="room__content")
+      a(class="room__option" href="/room/create")
+        i(class="fas fa-plus")
+        p Add a new room
+      a(class="room__option" href="/room/join/create")
+        i(class="fas fa-user-plus")
+        p Join to a room

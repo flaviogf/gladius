@@ -1,0 +1,15 @@
+.room__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 70px 16px 16px 16px;
+  width: 100%;
+}
+
+@media(min-width: 768px) {
+  .room__content {
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 768px;
+  }
+}
